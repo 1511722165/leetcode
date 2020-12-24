@@ -1,4 +1,4 @@
-package leetcode.leetcode0050_0060;
+package leetcode.leetcode0001_1000.leetcode001_100.leetcode0051_0060;
 
 public class LeetCode0058 {
 	//最后一个单词的长度

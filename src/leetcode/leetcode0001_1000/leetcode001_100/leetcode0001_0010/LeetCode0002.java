@@ -1,7 +1,4 @@
-package leetcode.leetcode0010_0001;
-
-import java.util.ArrayList;
-import java.util.List;
+package leetcode.leetcode0001_1000.leetcode001_100.leetcode0001_0010;
 
 public class LeetCode0002 {
 

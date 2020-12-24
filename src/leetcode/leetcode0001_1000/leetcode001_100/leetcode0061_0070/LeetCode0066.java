@@ -1,6 +1,6 @@
-package leetcode.leetcode0060_0070;
+package leetcode.leetcode0001_1000.leetcode001_100.leetcode0061_0070;
 
-class leetcode0060_0070 {
+class LeetCode0066 {
 	public int[] plusOne(int[] digits) {
 		int length = digits.length;
 		if (digits[length - 1] != 9) {

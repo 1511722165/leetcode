@@ -1,4 +1,4 @@
-package leetcode.leetcode0290_0300;
+package leetcode.leetcode0001_1000.leetcode201_300.leetcode0281_0290;
 
 import java.util.HashMap;
 import java.util.Map;
