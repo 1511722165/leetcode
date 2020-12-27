@@ -38,6 +38,9 @@ public class LeetCode0205 {
 	// return true;
 	// }
 
+	
+	
+	//单个 效率 charAt(i) 比toCharArray()快
 	public boolean isIsomorphic(String s, String t) {
 		int[] sint = new int[128];
 		int[] tint = new int[128];
