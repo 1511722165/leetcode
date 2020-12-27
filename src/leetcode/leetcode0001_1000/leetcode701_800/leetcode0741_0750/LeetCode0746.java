@@ -1,5 +1,7 @@
 package leetcode.leetcode0001_1000.leetcode701_800.leetcode0741_0750;
 
+import java.util.Arrays;
+
 public class LeetCode0746 {
 //
 //	public int minCostClimbingStairs(int[] cost) {

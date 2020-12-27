@@ -67,26 +67,26 @@ public class LeetCode0747 {
 
 	// }
 
-	public int dominantIndex(int[] nums) {
+		public int dominantIndex(int[] nums) {
 
-		int fir = nums[0];
-		int sec = Integer.MIN_VALUE;
-		int index = 0;
+			int fir = nums[0];
+			int sec = Integer.MIN_VALUE;
+			int index = 0;
 
-		for (int i = 1; i < nums.length; i++) {
-			if (nums[i] > fir) {
-				sec = fir;
-				fir = nums[i];
-				index = i;
-			} else if (nums[i] > sec) {
-				sec = nums[i];
-			} else
-				continue;
+			for (int i = 1; i < nums.length; i++) {
+				if (nums[i] > fir) {
+					sec = fir;
+					fir = nums[i];
+					index = i;
+				} else if (nums[i] > sec) {
+					sec = nums[i];
+				} else
+					continue;
 
-		}
-		if (sec * 2 <= fir)
-			return index;
-		return -1;
+			}
+			if (sec * 2 <= fir)
+				return index;
+			return -1;
 
 	}
 
