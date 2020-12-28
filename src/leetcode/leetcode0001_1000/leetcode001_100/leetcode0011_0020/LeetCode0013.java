@@ -5,7 +5,7 @@ public class LeetCode0013 {
 	public int romanToInt(String s) {
 		int res = 0;
 		char[] cs = (s+"A").toCharArray();
-		for (int i = 0; i < cs.length - 1; i++) {
+		for (int i = 0; i < cs.length; i++) {
 
 			if (cs[i] == 'M') {
 				res += 1000;
@@ -43,6 +43,6 @@ public class LeetCode0013 {
 	}
 	public static void main(String[] args) {
 		LeetCode0013 demo =new LeetCode0013();
-		System.out.println(demo.romanToInt("MDCCCLXXXIV"));
+		System.out.println(demo.romanToInt("M"));
 	}
 }
