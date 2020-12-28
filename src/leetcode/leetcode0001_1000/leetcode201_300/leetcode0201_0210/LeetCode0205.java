@@ -40,7 +40,7 @@ public class LeetCode0205 {
 
 	
 	
-	//µ¥¸ö Ğ§ÂÊ charAt(i) ±ÈtoCharArray()¿ì
+	//å•ä¸ª æ•ˆç‡ charAt(i) æ¯”toCharArray()å¿«
 	public boolean isIsomorphic(String s, String t) {
 		int[] sint = new int[128];
 		int[] tint = new int[128];

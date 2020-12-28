@@ -41,7 +41,7 @@ public class LeetCode0746 {
 		dp[0] = cost[0];
 		dp[1] = cost[1];
 		for (int i = 2; i < len; i++) {
-			// 每次选择最小消耗体力的走法
+			// 姣忔閫夋嫨鏈�灏忔秷鑰椾綋鍔涚殑璧版硶
 			dp[i] = Math.min(dp[i - 1], dp[i - 2]) + cost[i];
 		}
 		return Math.min(dp[len - 1], dp[len - 2]);

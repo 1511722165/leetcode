@@ -8,24 +8,24 @@ public class LeetCode0004 {
 		double res = 0;
 		int[] flag = { 0, 0 };
 		if (n == 0) {
-			// ÆæÊı
+			// å¥‡æ•°
 			if ((m & 1) == 1) {
 				res = nums2[(m - 1) / 2];
 				return res;
 			}
-			// Å¼Êı
+			// å¶æ•°
 			else {
 				res = (nums2[(m / 2)] + nums2[(m / 2) - 1]);
 				return res / 2;
 			}
 		}
 		if (m == 0) {
-			// ÆæÊı
+			// å¥‡æ•°
 			if ((n & 1) == 1) {
 				res = nums1[(n - 1) / 2];
 				return res;
 			}
-			// Å¼Êı
+			// å¶æ•°
 			else {
 				res = (nums1[(n / 2)] + nums1[(n / 2) - 1]);
 				return res / 2;
@@ -33,7 +33,7 @@ public class LeetCode0004 {
 		}
 
 		if (((m + n) & 1) == 1) {
-			// ÆæÊıÈ¡ÖĞ¼äÒ»¸ö
+			// å¥‡æ•°å–ä¸­é—´ä¸€ä¸ª
 			for (int i = 0; i <=(m + n - 1) / 2; i++) {
 				if (i < (m + n - 1) / 2) {
 					if (nums1[flag[0]] < nums2[flag[1]]) {
@@ -58,9 +58,9 @@ public class LeetCode0004 {
 				}
 			}
 		}
-		// Å¼
+		// å¶
 		else if (((m + n) & 1) == 0) {
-			// Å¼ÊıÈ¡ÖĞ¼äÁ½¸ö
+			// å¶æ•°å–ä¸­é—´ä¸¤ä¸ª
 			for (int i = 0; i <= (m + n) / 2 - 1; i++) {
 
 				if (i < (m + n) / 2 - 1) {

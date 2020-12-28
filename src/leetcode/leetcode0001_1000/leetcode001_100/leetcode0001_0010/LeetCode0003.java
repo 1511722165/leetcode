@@ -35,7 +35,7 @@ public class LeetCode0003 {
 	
 	
 	public int lengthOfLongestSubstring(String s) {
-        // ¼ÇÂ¼×Ö·ûÉÏÒ»´Î³öÏÖµÄÎ»ÖÃ
+        // è®°å½•å­—ç¬¦ä¸Šä¸€æ¬¡å‡ºç°çš„ä½ç½®
         int[] last = new int[128];
         for(int i = 0; i < 128; i++) {
             last[i] = -1;
@@ -43,7 +43,7 @@ public class LeetCode0003 {
         int n = s.length();
 
         int res = 0;
-        int start = 0; // ´°¿Ú¿ªÊ¼Î»ÖÃ
+        int start = 0; // çª—å£å¼€å§‹ä½ç½®
         for(int i = 0; i < n; i++) {
             int index = s.charAt(i);
             start = Math.max(start, last[index] + 1);
