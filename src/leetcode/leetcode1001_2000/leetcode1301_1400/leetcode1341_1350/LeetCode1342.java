@@ -13,7 +13,7 @@ public class LeetCode1342 {
 		if (num == 0) {
 			return count;
 		}
-		// ÆæÊı
+		// å¥‡
 		if ((num & 1) == 1) {
 			num -= 1;
 			count += 1;
