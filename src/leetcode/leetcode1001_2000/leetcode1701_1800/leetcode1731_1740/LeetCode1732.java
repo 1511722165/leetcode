@@ -22,13 +22,18 @@ public class LeetCode1732 {
 
 	public static void main(String[] args) {
 		List<String> list = new ArrayList<>();
-		for (int i = 0; i <= 1000000; i++) {
+		for (int i = 0; i <= 5; i++) {
 			list.add(i + "");
 		}
 
 		List<String> list2 = new ArrayList<>();
-		for (int i = 0; i <= 1000000; i++) {
+		for (int i = 0; i <= 5; i++) {
 			list2.add(i + "");
+		}
+
+		List<String> list3 = new ArrayList<>();
+		for (int i = 0; i <= 5; i++) {
+			list3.add(i + "");
 		}
 
 		long d1 = System.currentTimeMillis();
@@ -36,8 +41,9 @@ public class LeetCode1732 {
 		long d2 = System.currentTimeMillis();
 		System.out.println(d2 - d1);
 		long d3 = System.currentTimeMillis();
-		Stream.of(list, list2);
+		Stream.of(list3, list);
 		long d4 = System.currentTimeMillis();
 		System.out.println(d4 - d3);
+		System.out.println(Stream.of(list3, list));
 	}
 }
