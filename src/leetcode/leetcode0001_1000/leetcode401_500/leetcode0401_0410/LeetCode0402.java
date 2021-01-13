@@ -8,8 +8,8 @@ public class LeetCode0402 {
 		if (num > 8)
 			return new ArrayList<String>();
 		List<String> list = new ArrayList<String>();
-		int[] H = { 1, 2, 4, 8 };
-		int[] M = { 1, 2, 4, 8, 16, 32 };
+		int[][] hours = { { 1, 2, 4, 8 }, { 3, 5, 6, 9, 10 }, { 7, 11 } };
+		int[][] mins = { { 1, 2, 4, 8, 16, 32 }, { 3, 5, 6, 9, 10 }, { 7, 11 } };
 		return list;
 	}
 }
