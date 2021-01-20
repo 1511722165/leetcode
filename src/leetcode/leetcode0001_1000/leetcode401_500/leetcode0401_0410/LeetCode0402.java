@@ -5,7 +5,7 @@ public class LeetCode0402 {
 		 if(num.length()==k){
 			 return "0";
 		 }
-		 
+		 //
 		 return "";
 	    }
 }
