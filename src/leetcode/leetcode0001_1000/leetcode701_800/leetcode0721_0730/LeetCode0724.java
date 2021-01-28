@@ -1,36 +1,36 @@
 package leetcode.leetcode0001_1000.leetcode701_800.leetcode0721_0730;
 
+import java.util.Arrays;
+
 public class LeetCode0724 {
 
 	public int pivotIndex(int[] nums) {
-		int i = 0, j = nums.length - 1;
-		int left = 0, right = 0;
-		while (i != j && i != j + 1) {
-			if (right == left) {
-				left += nums[i];
-				right += nums[j];
-				i++;
-				j--;
-			} else if (left > right) {
-				if (nums[j] < 0) {
-					left += nums[j];
-				} else {
-					right += nums[j];
-				}
-				j--;
+		if(nums.length<3){
+			return -1;
+		}
+//		int sums = Arrays.stream(nums, 0, nums.length).sum();
+		  int sums = 0;
+	        for(int num : nums){
+	            sums += num;
+	        };
+		if(sums==nums[0]){
+			return 0;
+		}
+		int i = 1;
+		int left = nums[0];
+		while (i < nums.length) {
+			if (2 * left + nums[i] == sums) {
+				return i;
 			} else {
-				if (nums[i] < 0) {
-					right += nums[i];
-				} else {
-					left += nums[i];
-				}
+				left += nums[i];
 				i++;
 			}
 		}
-		if (left == right && i == j) {
-			return i;
-		}
 		return -1;
-
+	}
+	public static void main(String[] args) {
+		LeetCode0724 demo =new LeetCode0724();
+		int [] nums={1,7,3,6,5,6};
+		demo.pivotIndex(nums);
 	}
 }
