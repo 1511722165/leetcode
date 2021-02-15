@@ -17,7 +17,6 @@ public class LeetCode0151 {
 		getReverseWords(s, sb, 0, false);
 		return sb.toString();
 	}
-
 	private void getReverseWords(String s, StringBuilder sb, int start, boolean flag) {
 		// Ìø¹ý¿Õ¸ñ
 		while (start < s.length() && s.charAt(start) == ' ') {
@@ -41,4 +40,9 @@ public class LeetCode0151 {
 		if (flag)
 			sb.append(" ");
 	}
+
+public static void main(String[] args) {
+	LeetCode0151 demo= new LeetCode0151();
+	demo.reverseWords("abc fgf cc");
+}
 }
