@@ -71,4 +71,10 @@ public class LeetCode0239 {
 		}
 		return index;
 	}
+	public static void main(String[] args) {
+		LeetCode0239 demo = new LeetCode0239();
+		int nums[] = { 1, 3, -1, -3, 1, 3, 6, 7 };
+		int k = 3;
+		demo.maxSlidingWindow(nums, k);
+	}
 }
