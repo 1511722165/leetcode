@@ -8,9 +8,9 @@ public class LeetCode0017 {
 		if (digits == null || digits.length() == 0) {
 			return new ArrayList<String>();
 		}
+		List<String> list = new ArrayList<String>();
 		
-		
-		return new ArrayList<String>();
+		return list;
 	}
 
 }
