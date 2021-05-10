@@ -9,12 +9,12 @@ public class LeetCode1723 {
         if(k==1){
         return sum;
         }
-        Arrays.sort(job);
+        Arrays.sort(jobs);
         int avg=sum/k;
         if(avg<=jobs[length-1]){
             return jobs[length-1];
         }
-        (){}
+       // if(){}
 
         return 0;
     }
