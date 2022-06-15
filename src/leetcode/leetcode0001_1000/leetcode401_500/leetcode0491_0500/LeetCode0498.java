@@ -9,26 +9,30 @@ public class LeetCode0498 {
         while(i<m*n){
         result[i]=mat[x][y];
         if(z==0){
-            if(x-1<0){
+            x-=1;
+            y+=1;
+            if(y>=n){
+                x=Math.min(x+2,m);
+                y=n-1;
                 z=1;
+            }else if(x<=-1){
+                z=1;
+                x=0;
             }
-            x=Math.min(x-1,m-1);
-            x=Math.max(0,x);
-            y=Math.min(y+1,n-1);
         }else if(z==1){
-            if(y-1<0){
+            x+=1;
+            y-=1;
+            if(x>=m){
                 z=0;
-            }
-            if(x-1<=-1){
-              x=n-y+1;
-                x = Math.min(x, m - 1);
-            }else {
-                x = Math.min(x + 1, m - 1);
-                y = Math.min(y - 1, n - 1);
-                y = Math.max(y, 0);
+                y=Math.min(y+2,n);
+                x=m-1;
+            }else
+            if(y<=-1){
+                z=0;
+                y=0;
             }
         }
-        System.out.println(x+" "+y+" "+mat[x][y]);
+       // System.out.println(x+" "+y+" "+mat[x][y]);
         i++;
         }
         return result;
