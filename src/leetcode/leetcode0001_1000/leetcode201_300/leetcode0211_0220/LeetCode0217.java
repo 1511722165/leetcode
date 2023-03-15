@@ -24,6 +24,14 @@ public class LeetCode0217 {
 			
 //		return false;
 //    }
+
+//    public boolean containsDuplicate(int[] nums) {
+//        int len=nums.length;
+//        nums =Arrays.stream(nums).distinct().toArray();
+//        if(len>nums.length)
+//            return false;
+//        return true;
+//    }
 	
     public boolean containsDuplicate(int[] nums) {
         Arrays.sort(nums);
