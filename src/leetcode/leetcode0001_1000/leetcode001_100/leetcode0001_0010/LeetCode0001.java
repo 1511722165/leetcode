@@ -2,6 +2,7 @@ package leetcode.leetcode0001_1000.leetcode001_100.leetcode0001_0010;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Scanner;
 
 public class LeetCode0001 {
 	
@@ -39,5 +40,18 @@ public class LeetCode0001 {
 		}
 		return null;
 	}
+
+
+	public static void main(String[] args) {
+		Scanner in = new Scanner(System.in);
+		// 注意 hasNext 和 hasNextLine 的区别
+		while (in.hasNext()) { // 注意 while 处理多个 case
+			String a = in.nextLine();
+			if(a.lastIndexntOf(' ')<0)System.out.println(a.length());
+			System.out.println(a.length() - a.lastIndexOf(' '));
+		}
+	}
+
+
 
 }

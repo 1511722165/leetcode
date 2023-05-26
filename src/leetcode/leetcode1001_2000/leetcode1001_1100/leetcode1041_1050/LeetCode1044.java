@@ -1,5 +1,7 @@
 package leetcode.leetcode1001_2000.leetcode1001_1100.leetcode1041_1050;
 
+import java.util.Arrays;
+
 public class LeetCode1044 {
     public String longestDupSubstring(String s) {
         int len = 0;
@@ -45,9 +47,16 @@ public class LeetCode1044 {
         return res;
     }
 
-    public static void main(String[] args) {
-        LeetCode1044 demo =new LeetCode1044();
-        System.out.println(demo.longestDupSubstring("banana"));
+    public  void main(String[] args) {
+//        LeetCode1044 demo =new LeetCode1044();
+//        System.out.println(demo.longestDupSubstring("banana"));
+
+
+
+
+            int[] a={5,3,3,2,4,4,1,6,9,7,8,11};
+            Arrays.stream(a).distinct().limit(8).filter(nums->nums%3==1).sorted().forEach(System.out::println);
+
 
     }
 }
