@@ -13,10 +13,6 @@ public class LeetCode0105 {
         TreeNode treeNode=new TreeNode();
         for(int i=0;i<preorder.length;i++){
             TreeNode node=new TreeNode(inorder[i]);
-
-
-
-
             list.add(node);
         }
 
