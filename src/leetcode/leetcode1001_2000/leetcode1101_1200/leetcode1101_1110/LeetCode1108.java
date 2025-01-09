@@ -1,4 +1,4 @@
-package leetcode.leetcode1001_2000.leetcode1101_1200.leetcode1101_1120;
+package leetcode.leetcode1001_2000.leetcode1101_1200.leetcode1101_1110;
 
 public class LeetCode1108 {
 

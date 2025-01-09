@@ -130,9 +130,118 @@ public class LeetCode0018 {
         return res;
     }
 
+    public List<List<Integer>> fourSum1(int[] nums, int target) {
+        Arrays.sort(nums);
+        List<List<Integer>> result = new ArrayList<>();
+        Set<Integer> first = new HashSet<>();
+        Set<Integer> second = new HashSet<>();
+        Set<Integer> third = new HashSet<>();
+
+        for(int a = 0; a < nums.length-3; a++){
+            if(!first.contains(nums[a])){
+                first.add(nums[a]);
+                for(int b = a+1; b < nums.length-2; b++){
+                    if(!second.contains(nums[b])){
+                        second.add(nums[b]);
+                        for(int c = b+1; c < nums.length-1; c++){
+                            if(!third.contains(nums[c])){
+                                third.add(nums[c]);
+                                long sum = 0l+nums[a]+nums[b]+nums[c];
+                                for(int d = c+1; d < nums.length; d++){
+                                    System.out.println(sum+nums[d]);
+                                    if(sum+nums[d] > target){
+                                        break;
+                                    }else if(sum+nums[d] == target){
+                                        List<Integer> combine = new ArrayList<>(4);
+                                        combine.add(nums[a]);
+                                        combine.add(nums[b]);
+                                        combine.add(nums[c]);
+                                        combine.add(nums[d]);
+                                        result.add(combine);
+                                        break;
+                                    }
+                                }
+                            }
+                        }
+                        third.clear();
+                    }
+                }
+                second.clear();
+            }
+        }
+        return result;
+    }
+
+
+
+    public List<List<Integer>> fourSum(int[] nums, int target) {
+        List<List<Integer>> res = new ArrayList<>();
+        if (nums == null || nums.length < 4) {
+            return res;
+        }
+
+        Arrays.sort(nums);
+        int n = nums.length;
+
+        // 转换为long避免溢出
+        long longTarget = target;
+
+        for (int i = 0; i < n - 3; i++) {
+            // 跳过重复元素
+            if (i > 0 && nums[i] == nums[i - 1]) continue;
+
+            // 剪枝：当前最小和大于target，后面更大，直接结束
+            long minSum = (long)nums[i] + nums[i + 1] + nums[i + 2] + nums[i + 3];
+            if (minSum > longTarget) break;
+
+            // 剪枝：当前最大和小于target，当前数太小，继续下一个
+            long maxSum = (long)nums[i] + nums[n - 3] + nums[n - 2] + nums[n - 1];
+            if (maxSum < longTarget) continue;
+
+            for (int j = i + 1; j < n - 2; j++) {
+                // 跳过重复元素
+                if (j > i + 1 && nums[j] == nums[j - 1]) continue;
+
+                // 第二层剪枝
+                long minSum2 = (long)nums[i] + nums[j] + nums[j + 1] + nums[j + 2];
+                if (minSum2 > longTarget) break;
+
+                long maxSum2 = (long)nums[i] + nums[j] + nums[n - 2] + nums[n - 1];
+                if (maxSum2 < longTarget) continue;
+
+                int left = j + 1, right = n - 1;
+
+                while (left < right) {
+                    long sum = (long)nums[i] + nums[j] + nums[left] + nums[right];
+
+                    if (sum < longTarget) {
+                        left++;
+                        // 优化：跳过重复元素
+                        while (left < right && nums[left] == nums[left - 1]) left++;
+                    } else if (sum > longTarget) {
+                        right--;
+                        // 优化：跳过重复元素
+                        while (left < right && nums[right] == nums[right + 1]) right--;
+                    } else {
+                        res.add(Arrays.asList(nums[i], nums[j], nums[left], nums[right]));
+                        left++;
+                        right--;
+                        // 跳过重复元素
+                        while (left < right && nums[left] == nums[left - 1]) left++;
+                        while (left < right && nums[right] == nums[right + 1]) right--;
+                    }
+                }
+            }
+        }
+        return res;
+    }
+
     public static void main(String[] args) {
         LeetCode0018 demo = new LeetCode0018();
-        System.out.println(demo.threeSum(new int[]{-1,0,1,2,-1,-4,-2,-3,3,0,4}).toString());
-        System.out.println(demo.threeSum(new int[]{-2,0,0,2,2}).toString());
+//        System.out.println(demo.threeSum(new int[]{-1,0,1,2,-1,-4,-2,-3,3,0,4}).toString());
+//        System.out.println(demo.threeSum(new int[]{-2,0,0,2,2}).toString());
+
+//        System.out.println(demo.fourSum(new int[]{1000000000,1000000000,1000000000,1000000000},-294967296));
+
     }
 }
