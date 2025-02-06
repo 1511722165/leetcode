@@ -7,7 +7,7 @@ import java.util.List;
 public class LeetCode0350 {
 
 
-    public int[] intersect(int[] nums1, int[] nums2) {
+    public int[] intersect1(int[] nums1, int[] nums2) {
 
         List<Integer> list1 = new ArrayList<>();
         List<Integer> list2 = new ArrayList<>();
@@ -77,5 +77,55 @@ public class LeetCode0350 {
             }
         }
         return -1;
+    }
+
+
+    public int[] intersect(int[] nums1, int[] nums2) {
+        int[][] dp = new int[3][1001];
+        for (int i : nums1) {
+            dp[0][i]++;
+        }
+
+        for (int i : nums2) {
+            dp[1][i]++;
+            if (dp[0][i] > 0) {
+                dp[2][i] = Math.min(dp[0][i], dp[1][i]);
+            }
+        }
+        int size = Arrays.stream(dp[2]).sum();
+        int res[] = new int[size];
+        int index = 0;
+        for (int i = 0; i <= 1000; i++) {
+            if (dp[2][i] > 0) {
+
+                Arrays.fill(res, index, index + dp[2][i], i);
+                index += dp[2][i];
+
+
+            }
+
+        }
+        return res;
+    }
+
+    class Solution {
+        public int[] intersect(int[] moreArr, int[] lessArr) {
+            if(moreArr.length < lessArr.length){
+                return intersect(lessArr,moreArr);
+            }
+            int size = 0;
+            int[] tmp = new int[lessArr.length];
+            int[] dict = new int[1001];
+            for (int i : lessArr) {
+                dict[i]++;
+            }
+            for (int i : moreArr) {
+                if(dict[i] > 0) {
+                    dict[i]--;
+                    tmp[size++] = i;
+                }
+            }
+            return Arrays.copyOfRange(tmp,0,size);
+        }
     }
 }
