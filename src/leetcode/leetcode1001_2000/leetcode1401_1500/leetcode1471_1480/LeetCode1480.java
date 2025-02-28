@@ -21,7 +21,7 @@ public class LeetCode1480 {
 		return nums;
 
 	}
-	// Ğ§ÂÊÉÏÀ´Ëµ++i±Èi++À´µÄ¸üÓĞĞ§ÂÊ
+	// æ•ˆç‡ä¸Šæ¥è¯´++iæ¯”i++æ¥çš„æ›´æœ‰æ•ˆç‡
 	// public int[] runningSum(int[] nums) {
 	//
 	// for (int i = 1; i < nums.length; i++) {
