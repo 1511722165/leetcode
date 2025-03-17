@@ -4,48 +4,17 @@ import java.util.Arrays;
 
 public class LeetCode0746 {
 //
-//	public int minCostClimbingStairs(int[] cost) {
-//		int[] newcost = Arrays.copyOf(cost, cost.length +4);
-//		int result = 0;
-//		for (int i = 0; i < cost.length; i++) {
-//			if (newcost[i + 1] == 0) {
-//				i++;
-//			} else if (newcost[i] + newcost[i + 2] < newcost[i + 1] + newcost[i + 3]) {
-//				if (newcost[i] >= newcost[i + 1]) {
-//					result = result + newcost[i + 1];
-//					i = i + 1;
-//				} else {
-//
-//					if (newcost[i] + newcost[i + 2] < newcost[i + 1]) {
-//
-//						result = result + newcost[i]+newcost[i + 2];
-//						i = i + 2;
-//					} else {
-//						result = result + newcost[i + 1];
-//						i = i + 1;
-//					}
-//
-//				}
-//			} else {
-//				result = result + newcost[i + 1];
-//				i = i + 1;
-//			}
-//
-//		}
-//		return result;
-//	}
-
-	public int minCostClimbingStairs(int[] cost) {
-		int len = cost.length;
-		int[] dp = new int[len];
-		dp[0] = cost[0];
-		dp[1] = cost[1];
-		for (int i = 2; i < len; i++) {
-			// 每次选择最小消耗体力的走法
-			dp[i] = Math.min(dp[i - 1], dp[i - 2]) + cost[i];
-		}
-		return Math.min(dp[len - 1], dp[len - 2]);
+public int minCostClimbingStairs(int[] cost) {
+	int n=cost.length;
+	int[] dp=new int[n];
+	dp[0]=cost[0];
+	dp[1]=cost[1];
+	for (int i=2;i<n;i++){
+		dp[i]=Math.min(dp[i-1]+cost[i],dp[i-2]+cost[i]);
 	}
+	return Math.min(dp[n-1],dp[n-2]);
+}
+
 
 	public static void main(String[] args) {
 		LeetCode0746 demo = new LeetCode0746();
